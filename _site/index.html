@@ -108,7 +108,9 @@
     </div>
   </div>
   <div id="progress-bar">
-    <span id="progress-fill" class="loading"></span>
+    <div id="progress-bar-wrapper">
+      <span id="progress-fill" class="loading"></span>
+    </div>
   </div>
 </div>
 
@@ -127,10 +129,11 @@
         })
         .then((response) => response.json())
         .then((json) => {
-            const precent = 100 * (parseFloat(json.data) / 50000)
             const progressFill = document.getElementById("progress-fill");
             progressFill.classList = "";
-            progressFill.style.width = precent + "%";
+            const progressBarWrapper = document.getElementById("progress-bar-wrapper");
+            const precent = 100 * (parseFloat(json.data) / 50000)
+            progressBarWrapper.style.width = precent + "%";
         } );
     }
 </script>
