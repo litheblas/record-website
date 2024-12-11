@@ -18,7 +18,13 @@ header navbar {
 
 header #logo {
   display: inline;
-  margin: 0 20px
+  margin: 0 20px 0 80px;
+}
+
+@media (max-width: 900px) {
+  header #logo {
+    margin: 0 20px
+  }
 }
 
 header img {
