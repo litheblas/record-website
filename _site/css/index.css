@@ -1,0 +1,269 @@
+
+/*
+* Banner
+*/
+
+.banner {
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  height: 100%;
+  width: 100%;
+  box-shadow: inset 0 -20px 30px #00000077;
+}
+
+@media(max-width: 900px) {
+  .banner {
+    height: 300px;
+  }
+}
+
+.banner img {
+  position: relative;   
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: saturate(0.5);
+  z-index: -1;
+}
+
+/*
+* Flex container
+*/
+
+.grid-container {
+  padding: 60px 0 0 0;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  grid-template-rows: 160px 250px 1fr;
+  max-height: calc(100vh - 60px);
+}
+
+@media(max-width: 900px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*
+* Progress Bar
+*/
+
+#status {
+  grid-row-start: 1;
+  grid-row-end: 1;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+  margin: 0 auto;
+  width: 100%;
+  background: var(--blue);
+  min-height: 160px;
+}
+
+#progress-bar {
+  border-radius: 40px;
+  
+  background-color: #456d84;
+  box-shadow: 10px 10px 16px #00000066;
+  
+  width: calc(100% - 80px);
+  max-width: 1000px;
+  height: 45px;
+
+  margin: 0 40px 0px 40px;
+  z-index: -1;
+}
+
+#progress-bar-markings {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  width: calc(100% - 80px);
+  margin: 40px 40px 10px 40px;
+  padding: 0;
+  z-index: 1;
+}
+
+@media(max-width: 900px) {
+  #progress-bar-markings {
+    margin: 40px 40px 10px 40px;
+  }
+}
+
+.progress-bar-markings-container {
+  width: calc(100% / 5);
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+#progress-bar-markings span {
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 0 6px calc((500px - 80px) / 5 - 35px);
+  white-space: nowrap;
+  padding: 0;
+  color: var(--off-yellow);
+}
+
+@media(max-width: 900px) {
+  #progress-bar-markings span {
+    font-size: 0.85em;
+    margin: 0 0 6px calc((100vw - 80px) / 5 - 30px);
+  }
+}
+
+#progress-bar-markings .vl {
+  display: block;
+  height: 45px;
+  border-right: 2px solid #0009;
+  margin: 11px 0 0 0;
+  padding: 0;
+}
+
+@media(max-width: 900px) {
+  #progress-bar-markings .vl {
+    margin: 14px 0 0 0;
+  }
+}
+
+#progress-fill {
+  display: inline-block;
+  height: 100%;
+  border-radius: 40px;
+  transition: all 1s;
+
+  background-color: var(--off-yellow);
+}
+
+@media(max-width: 900px) {
+  #progress-fill {
+    border-radius: 20px;
+  }
+}
+
+.loading {
+  width: 100% !important;
+  background-size: 100px 100px;
+  overflow: hidden;
+
+  background-image: linear-gradient(
+    -45deg,
+    #0002 25%,
+    transparent 25%,
+    transparent 50%,
+    #0002 50%,
+    #0002 75%,
+    transparent 75%,
+    transparent
+  );
+
+  animation: moveBG 2s linear infinite;
+}
+
+/*
+* Text box
+*/
+
+.text-box {
+  grid-row-start: 3;
+  grid-row-end: 4;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  margin: 0 auto;
+
+  border-radius: 20px;
+  padding: 20px 50px;
+}
+
+@media(max-width: 900px) {
+  .text-box {
+    padding: 30px 50px;
+  }
+}
+
+.text-box p {
+  text-align: justify;
+}
+
+
+/*
+* Delmål
+*/
+
+.price-list {
+  grid-row-start: 2;
+  grid-row-end: 4;
+
+  grid-column-start: 2;
+  grid-column-end: 2;
+
+  padding: 0 50px 10px 50px;
+  background: var(--blue);
+  color: var(--off-yellow);
+  height: 100%;
+}
+
+.price-list h1 {
+  font-size: 1.8em;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.price-list h3 {
+  font-size: 1.2em;
+  margin: 10px 0 20px 0;
+  text-align: left;
+  padding: 0 0 10px 0;
+  box-shadow: 0 -3px 0 0 var(--off-yellow) inset;
+}
+
+.price-list p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 1em 0;
+  margin: 20px 0 5px 0;
+  font-weight: bold;
+}
+
+.price-list ul {
+  padding: 0 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.price-list li {
+  padding: 8px 0;
+  border-radius: 10px;
+  margin: 0;
+  list-style: none;
+  break-inside: avoid-column;
+}
+
+@keyframes moveBG {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+@keyframes moveBG {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}

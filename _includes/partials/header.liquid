@@ -1,0 +1,31 @@
+<navbar>
+  <a href="/" id="logo">
+    <img src="svg/logga.svg">
+  </a>
+  <button class="navbar-toggle" onclick="toggleNavbar()">
+    <img src="svg/navbar-toggle.svg">
+  </button>
+  <ul id="links">
+    {%- for post in collections.all -%}
+      <li
+        {% if page.url == post.url %}
+        class="selected"
+        aria-current="page"
+        {% endif %}>
+        <a href="{{ post.url }}">
+          {{ post.data.title }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</navbar>
+
+<script>
+  var collapsed = true;
+  const element = document.getElementById("links");
+
+  function toggleNavbar() {
+    collapsed = !collapsed; 
+    element.style.top = collapsed ? "-300px" : "60px";
+  }
+</script>

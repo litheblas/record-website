@@ -1,0 +1,108 @@
+---
+title: Förköp
+description: 
+layout: layouts/layout.liquid
+permalink: förköp.html
+css: förköp.css
+---
+
+<div id="container" class="flex-container">
+    <section id="formulär">
+        <h2>Förköpsformulär</h2>
+        <form id="form">
+            <label for="förnamn">Förnamn:</label>
+            <input type="text" id="förnamn" required>
+            <label for="efternamn">Efternamn:</label>
+            <input type="text" id="efternamn" required>
+            <label for="epost">Epost:</label>
+            <input type="text" id="epost" required>
+            <label for="adress">Adress:</label>
+            <input type="text" id="adress" required>
+            <label for="adress">Postnummer:</label>
+            <input type="text" id="postnummer" required>
+            <label for="telefon">Telefonnummer:</label>
+            <input type="text" id="telefon" required>
+            <br>
+            <input id="submit-form" type="submit" disabled="disabled" value="Skicka">
+        </form>
+        <img id="swish-QR" src="img/swish-QR.png">
+    </section>
+    <section class="price-list" id="delmål">
+        <h1>Förmåner</h1>
+        <ul>
+            <li>
+                <h3>0 - 350 kr</h3>
+                <p> Du hjälper oss att göra skivan till verklighet! </p>
+            </li>
+            <li>
+                <h3>350 - 500 kr</h3>
+                <p> Du får ett exemplar av vår nya LP-skiva! </p>
+            </li>
+            <li>
+                <h3>500 - 1000 kr</h3>
+                <p> Du får vår nya LP-skiva signerad av hela blåset! </p>
+            </li>
+            <li>
+                <h3>1000 - 5000 kr</h3>
+                <p> Du får vår nya LP-skiva, sniglad av baletten! </p>
+            </li>
+            <li>
+                <h3>5000 kr</h3>
+                <p>  Du får vår nya LP-skiva, med orkestern nakna på omslaget! </p>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<script>
+    const form = document.querySelector('#formulär form');
+
+    form.addEventListener("change", function(e) {
+        const inputs = document.getElementsByTagName("input");
+        const submit = document.getElementById("submit-form");
+        
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].checkValidity() == false) {
+                submit.disabled = "disabled";
+            } else {
+                submit.disabled = false;
+            }
+        }
+    });
+    
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxtLrgIy9K9MzmibNuueC_7no4pUSV8Zs1SwuRGAbl7IOydOVv5JxecbBKUKg04vJNhHQ/exec"
+
+    form.addEventListener('submit', function(e) 
+    {            
+        event.preventDefault(); 
+
+        let formData = {
+            förnamn: document.getElementById('förnamn').value,
+            efternamn: document.getElementById('efternamn').value,
+            epost: document.getElementById('epost').value,
+            adress: document.getElementById('adress').value,
+            postnummer: document.getElementById('postnummer').value,
+            telefon: document.getElementById('telefon').value,
+            date: new Date().toISOString().slice(0, 10)
+        };
+
+        fetch(scriptURL, {
+            redirect: "follow",
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8",
+            }
+        })
+        
+        const swish = document.querySelector('#formulär img');
+        const formulär = document.querySelector('#formulär');
+        const container = document.querySelector('#container');
+
+        form.style.opacity = 0;
+        swish.style.opacity = 1;
+        formulär.style.top = "-650px";    
+        formulär.style.overflowY = "visible";
+        container.style.overflowY = "hidden";
+    });
+</script>

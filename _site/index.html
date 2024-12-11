@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="LiTHe Blås">
+    <link
+      rel="preload"
+      as="image"
+      href="/svg/logga.svg">
+    <link href="/manifest.json" rel="manifest">
+    <link href="/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    
+      <link rel="stylesheet" href="/css/index.css">
+    
+    
+      <script src="/js/fetchCurrentProgress.js"></script>
+    
+  </head>
+
+  <body>
+    <header class="box-shadow">
+      <navbar>
+  <a href="/" id="logo">
+    <img src="svg/logga.svg">
+  </a>
+  <button class="navbar-toggle" onclick="toggleNavbar()">
+    <img src="svg/navbar-toggle.svg">
+  </button>
+  <ul id="links"><li
+        
+        class="selected"
+        aria-current="page"
+        >
+        <a href="/">
+          Start
+        </a>
+      </li><li
+        >
+        <a href="/förköp.html">
+          Förköp
+        </a>
+      </li></ul>
+</navbar>
+
+<script>
+  var collapsed = true;
+  const element = document.getElementById("links");
+
+  function toggleNavbar() {
+    collapsed = !collapsed; 
+    element.style.top = collapsed ? "-300px" : "60px";
+  }
+</script>
+    </header>
+    <main>
+      
+<div class="grid-container"> 
+    <div id="banner" class="banner">
+        <img src="img/banner.webp"/>
+    </div>
+    <section id="info" class="text-box">
+        <h3>Hjälp LiTHe Blås producera sin nästa skiva!</h3>
+        <p>
+            Äntligen! Efter 12 långa år ska dom göra det igen! 
+            LiTHe Blås släpper äntligen sin efterlängtade nya skiva!!!
+        </p>
+        <p>
+            Vi i skivgruppen har äran att få berätta att vi under våren 2025 ska spela in en ny skiva, men för att göra detta projekt från en dröm till en verklighet behöver vi din hjälp. 
+        </p>
+        <p>
+            Därför erbjuder vi möjligheten att förbeställa skivan samt donera en valfri summa för att se till att detta projekt blir så bra som möjligt! 
+        </p>
+        <p>
+            Har ni några frågor eller idéer kan ni kontakta oss på vår mail: skivgruppen@litheblas.org    
+        </p>
+    </section>
+    <section id="status">
+        <div id="progress-bar-markings">
+            <div class="progress-bar-markings-container">
+                <span>10 000 kr</span>
+                <div  class="vl"></div>
+            </div>
+            <div class="progress-bar-markings-container">
+                <span>20 000 kr</span>
+                <div  class="vl"></div>
+            </div>
+            <div class="progress-bar-markings-container">
+                <span>30 000 kr</span>
+                <div  class="vl"></div>
+            </div>
+            <div class="progress-bar-markings-container">
+                <span>40 000 kr</span>
+                <div  class="vl"></div>
+            </div>
+            <div class="progress-bar-markings-container">
+                <span style="visibility: hidden;">50 000 kr</span>
+                <div class="vl" style="visibility: hidden;"></div>
+            </div>
+        </div>
+        <div id="progress-bar">
+            <span id="progress-fill" class="loading"></span>
+        <div>
+    </section>
+    <section class="price-list" id="delmål">
+        <h1>Donationsmål</h1>
+        <ul>
+            <li>
+                <h3>
+                    10 000 kr
+                </h3>
+                <p>
+                    En gamling får vara med i musikvideon
+                </p>
+            </li>
+            <li>
+                <h3>
+                    20 000 kr
+                </h3>
+                <p>
+                    Aktiva blåset åker gratis på vår rephelg
+                </p>
+            </li>
+            <li>
+                <h3>
+                    30 000 kr
+                </h3>
+                <p>
+                    Kompet gycklar på skivsläppet
+                </p>
+            </li>
+            <li>
+                <h3>
+                    40 000 kr
+                </h3>
+                <p>
+                    Kompet gycklar INTE på skivsläppet
+                </p>
+            </li>
+            <li>
+                <h3>
+                    50 000 kr
+                </h3>
+                <p>
+                    Naket på skivomslaget
+                </p>
+            </li>
+        </ul>
+    </section>
+</div>
+    </main>
+    <footer class="box-shadow">
+      <div></div>
+    </footer>
+  </body>
+</html>

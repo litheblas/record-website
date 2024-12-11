@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="LiTHe Blås">
+    <link
+      rel="preload"
+      as="image"
+      href="/svg/logga.svg">
+    <link href="/manifest.json" rel="manifest">
+    <link href="/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    {% if css %}
+      <link rel="stylesheet" href="/css/{{ css }}">
+    {% endif %}
+    {% if js %}
+      <script src="/js/{{ js }}"></script>
+    {% endif %}
+  </head>
+
+  <body>
+    <header class="box-shadow">
+      {% include "partials/header.liquid" %}
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <footer class="box-shadow">
+      {% include "partials/footer.liquid" %}
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+
+.flex-container {
+  padding-top: 60px;
+  display: flex;
+  width: 100vw;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media(max-width: 900px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+#formulär {
+  padding: 40px;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  top: 0;
+  transition: top 1s;
+  height: calc(100vh - 60px - 80px);
+  width: calc(100vw - 500px - 80px);
+  overflow-y: hidden;
+}
+
+@media(max-width: 900px) {
+  #formulär {
+    width: calc(100% - 80px);
+  }
+}
+
+#formulär h2
+{
+  margin: 20px 0 0 0;
+}
+
+#swish-QR {
+  margin: auto;
+  padding: 20px;
+  height: 550px;
+  opacity: 0;
+  transition: opacity 1s;
+  z-index: -1;
+}
+
+form {
+  transition: opacity 1s;
+  max-width: 100%;
+  max-height: calc(100% - 400px);
+}
+
+form label {
+  margin: 35px 0 0 5px;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+
+form input {
+  display: block;
+  height: 40px;
+  border-radius: 20px;
+  border-style: none;
+}
+
+form input[type=text] {
+  width: 100%;
+  background-color: #EEE;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+form input[type=submit] {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--off-yellow);
+  width: 100px;
+}
+
+form input[type=submit]:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.price-list {
+  max-width: 500px;
+  padding: 20px 50px;
+  background: var(--blue);
+  color: var(--off-yellow);
+}
+
+@media(max-width: 900px) {
+  .price-list {
+    max-width: calc(100% - 100px);
+  }
+}
+
+.price-list h1 {
+  font-size: 1.8em;
+  margin: 20px 0 10px 0;
+  text-align: left;
+}
+
+.price-list h3 {
+  font-size: 1.2em;
+  margin: 10px 0 20px 0;
+  text-align: left;
+  padding: 0 0 16px 0;
+  box-shadow: 0 -3px 0 0 var(--off-yellow) inset;
+}
+
+.price-list p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin: 1em 0;
+  margin: 20px 0 10px 0;
+  font-weight: bold;
+}
+
+.price-list ul {
+  padding: 0 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.price-list li {
+  padding: 8px 0;
+  border-radius: 10px;
+  margin: 0;
+  list-style: none;
+  break-inside: avoid-column;
+}

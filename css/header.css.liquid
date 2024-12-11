@@ -1,0 +1,118 @@
+---
+permalink: css/header.css
+eleventyExcludeFromCollections: true
+---
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+  height: 60px;
+  background: var(--off-yellow);
+}
+
+header navbar {
+  background: var(--off-yellow);
+  margin: 0 auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header #logo {
+  display: inline;
+  margin: 0 20px
+}
+
+header img {
+  margin: 10px auto 0 auto;
+  height: 40px;
+  filter: invert(19%) sepia(61%) saturate(1513%) hue-rotate(173deg) brightness(95%) contrast(101%);
+}
+
+header ul {
+  width: 300px;
+  min-height: 100%;
+  margin: 0;
+  padding: 0 90px 0 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+  header ul {
+    background: var(--off-yellow);
+    width: 100%;
+    position: absolute;
+    flex-direction: column;;
+    top: -300px;
+    width: 100%;
+    padding: 0;
+    right: 0;
+    transition: 0.4s top;
+    z-index: -1;
+  }
+}
+
+header li {
+  margin: 0 auto 0 auto;
+  display: flex; 
+  min-height: 100%;
+}
+
+@media (max-width: 600px) {
+  header li {
+    margin: 20px;
+  }
+}
+
+header navbar a {
+  font-size: 1em;
+  font-weight: bold;
+  
+  color: var(--blue);
+
+  display: flex;
+  margin: auto 0;
+  
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header navbar a:hover {
+  opacity: 0.5;
+}
+
+.selected {
+  box-shadow: 0 -4px 0 0 var(--blue) inset;
+}
+
+@media (max-width: 600px) {
+  .selected {
+    box-shadow: none;
+  }  
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .navbar-toggle {
+    display: inline;
+    width: 30px;
+    margin: 0px 30px 0px 0px;
+    float: right;
+    padding: 0;
+    border: none;
+    filter: grayscale();
+    background-color: transparent;
+  }
+
+  .navbar-toggle:hover {
+    filter: none;
+    cursor: pointer;
+  }
+}
