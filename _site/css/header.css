@@ -34,7 +34,7 @@ header ul {
   padding: 0 90px 0 10px;
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 
 @media (max-width: 600px) {
@@ -42,7 +42,7 @@ header ul {
     background: var(--off-yellow);
     width: 100%;
     position: absolute;
-    flex-direction: column;;
+    flex-direction: column-reverse;
     top: -300px;
     width: 100%;
     padding: 0;
