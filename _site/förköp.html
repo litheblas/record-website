@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/progressBar.css">
     
       <link rel="stylesheet" href="/css/förköp.css">
     
@@ -80,10 +81,62 @@
         <img id="swish-QR" src="img/swish-QR.png">
     </section>
     <section class="aside" id="delmål">
+        
+        <div id="progress-container">
+  <div id="progress-bar-markings">
+    <div class="progress-bar-markings-container">
+      <span>10 000 kr</span>
+      <div class="vl"></div>
+    </div>
+    <div class="progress-bar-markings-container">
+      <span>20 000 kr</span>
+      <div class="vl"></div>
+    </div>
+    <div class="progress-bar-markings-container">
+      <span>30 000 kr</span>
+      <div class="vl"></div>
+    </div>
+    <div class="progress-bar-markings-container">
+      <span>40 000 kr</span>
+      <div class="vl"></div>
+    </div>
+    <div class="progress-bar-markings-container">
+      <span style="visibility: hidden;">50 000 kr</span>
+      <div class="vl" style="visibility: hidden;"></div>
+    </div>
+  </div>
+  <div id="progress-bar">
+    <span id="progress-fill" class="loading"></span>
+  </div>
+</div>
+
+<script>
+    fetchCurrentProgress();
+
+    function fetchCurrentProgress() {
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxtLrgIy9K9MzmibNuueC_7no4pUSV8Zs1SwuRGAbl7IOydOVv5JxecbBKUKg04vJNhHQ/exec";
+        
+        fetch(scriptURL, {
+            redirect: "follow",
+            method: 'GET',
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8",
+            }
+        })
+        .then((response) => response.json())
+        .then((json) => {
+            const precent = 100 * (parseFloat(json.data) / 50000)
+            const progressFill = document.getElementById("progress-fill");
+            progressFill.classList = "";
+            progressFill.style.width = precent + "%";
+        } );
+    }
+</script>
+
         <h1>Förmåner</h1>
         <ul>
             <li>
-                <h3>0 - 350 kr</h3>
+                <h3>1 - 350 kr</h3>
                 <p> Du hjälper oss att göra skivan till verklighet! </p>
             </li>
             <li>
@@ -99,7 +152,7 @@
                 <p> Du får vår nya LP-skiva, sniglad av baletten! </p>
             </li>
             <li>
-                <h3>5000 kr</h3>
+                <h3>Över 5000 kr</h3>
                 <p>  Du får vår nya LP-skiva, med orkestern nakna på omslaget! </p>
             </li>
         </ul>

@@ -4,7 +4,6 @@ description:
 layout: layouts/layout.liquid
 permalink: index.html
 css: "index.css" 
-js: "fetchCurrentProgress.js"
 ---
 
 <div class="horizontal-flex"> 
@@ -30,33 +29,8 @@ js: "fetchCurrentProgress.js"
         </div>
     </section>
     <section class="vertical-flex aside"> 
-        <div id="status">
-            <div id="progress-bar-markings">
-                <div class="progress-bar-markings-container">
-                    <span>10 000 kr</span>
-                    <div  class="vl"></div>
-                </div>
-                <div class="progress-bar-markings-container">
-                    <span>20 000 kr</span>
-                    <div  class="vl"></div>
-                </div>
-                <div class="progress-bar-markings-container">
-                    <span>30 000 kr</span>
-                    <div  class="vl"></div>
-                </div>
-                <div class="progress-bar-markings-container">
-                    <span>40 000 kr</span>
-                    <div  class="vl"></div>
-                </div>
-                <div class="progress-bar-markings-container">
-                    <span style="visibility: hidden;">50 000 kr</span>
-                    <div class="vl" style="visibility: hidden;"></div>
-                </div>
-            </div>
-            <div id="progress-bar">
-                <span id="progress-fill" class="loading"></span>
-            </div>
-        </div>
+
+        {% include "partials/progressBar.liquid" %}
 
         <h1>Donationsmål</h1>
         <ul>
