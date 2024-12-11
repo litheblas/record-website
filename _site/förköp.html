@@ -76,6 +76,11 @@
             <input type="text" id="postnummer" required>
             <label for="telefon">Telefonnummer:</label>
             <input type="text" id="telefon" required>
+            <legend>Vill du ha en skiva? (Du måste donera minst 350kr för att få en skiva)</legend>
+            <input type="radio" id="yes" name="skiva" value="Ja" required>
+            <label class="inline-label" for="yes">Ja</label>
+            <input type="radio" id="no" name="skiva" value="Nej" required>
+            <label class="inline-label" for="no">Nej</label>
             <br>
             <input id="submit-form" type="submit" disabled="disabled" value="Skicka">
         </form>
@@ -189,6 +194,7 @@
             adress: document.getElementById('adress').value,
             postnummer: document.getElementById('postnummer').value,
             telefon: document.getElementById('telefon').value,
+            skiva: document.querySelector('input[name="skiva"]:checked').value,
             date: new Date().toISOString().slice(0, 10)
         };
 
