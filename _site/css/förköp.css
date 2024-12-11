@@ -49,7 +49,6 @@
 form {
   transition: opacity 1s;
   max-width: 100%;
-  max-height: calc(100% - 400px);
 }
 
 form label {
