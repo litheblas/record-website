@@ -1,15 +1,11 @@
 
-.flex-container {
-  padding-top: 60px;
-  display: flex;
-  width: 100vw;
-  flex-direction: row;
-  justify-content: space-between;
+.no-overflow {
+  overflow-y: hidden;
 }
 
 @media(max-width: 900px) {
-  .flex-container {
-    flex-direction: column;
+  .no-overflow {
+    overflow-y: visible;
   }
 }
 
