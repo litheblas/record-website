@@ -21,7 +21,7 @@ header #logo {
   margin: 0 20px 0 80px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 650px) {
   header #logo {
     margin: 0 20px
   }
@@ -43,7 +43,7 @@ header ul {
   flex-direction: row-reverse;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   header ul {
     background: var(--off-yellow);
     width: 100%;
@@ -64,7 +64,7 @@ header li {
   min-height: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   header li {
     margin: 20px;
   }
@@ -91,7 +91,7 @@ header navbar a:hover {
   box-shadow: 0 -4px 0 0 var(--blue) inset;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .selected {
     box-shadow: none;
   }  
@@ -101,7 +101,7 @@ header navbar a:hover {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .navbar-toggle {
     display: inline;
     width: 30px;

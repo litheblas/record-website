@@ -62,25 +62,40 @@
       
 <div id="container" class="horizontal-flex"> 
     <section id="formulär">
-        <h2>Förköpsformulär</h2>
         <form id="form">
-            <label for="förnamn">Förnamn:</label>
-            <input type="text" id="förnamn" required>
-            <label for="efternamn">Efternamn:</label>
-            <input type="text" id="efternamn" required>
-            <label for="epost">Epost:</label>
+            <h2>Förköpsformulär</h2>
+
+            <div>
+                <label for="förnamn">Förnamn:</label>
+                <input type="text" id="förnamn" required>
+            </div>
+            <div>
+                <label for="efternamn">Efternamn:</label>
+                <input type="text" id="efternamn" required>
+            </div>
+            <div>
+                <label for="epost">Epost:</label>
             <input type="text" id="epost" required>
-            <label for="adress">Adress:</label>
+            </div>
+            <div>
+                <label for="adress">Adress:</label>
             <input type="text" id="adress" required>
-            <label for="adress">Postnummer:</label>
-            <input type="text" id="postnummer" required>
-            <label for="telefon">Telefonnummer:</label>
-            <input type="text" id="telefon" required>
-            <legend>Vill du ha en skiva? (Du måste donera minst 350kr för att få en skiva)</legend>
-            <input type="radio" id="yes" name="skiva" value="Ja" required>
-            <label class="inline-label" for="yes">Ja</label>
-            <input type="radio" id="no" name="skiva" value="Nej" required>
-            <label class="inline-label" for="no">Nej</label>
+            </div>
+            <div>
+                <label for="adress">Postnummer:</label>
+                <input type="text" id="postnummer" required>
+            </div>
+            <div>
+                <label for="telefon">Telefonnummer:</label>
+                <input type="text" id="telefon" required>
+            </div>
+        <div>
+                <legend>Vill du ha en skiva? (Vid donation av minst 350kr)</legend>
+                <input type="radio" id="yes" name="skiva" value="Ja" required>
+                <label class="inline-label" for="yes">Ja</label>
+                <input type="radio" id="no" name="skiva" value="Nej" required>
+                <label class="inline-label" for="no">Nej</label>
+            </div>
             <br>
             <input id="submit-form" type="submit" disabled="disabled" value="Skicka">
         </form>
@@ -142,8 +157,8 @@
     }
 </script>
 
-        <h1>Förmåner</h1>
         <ul>
+            <h1>Förmåner</h1>
             <li>
                 <h3>1 - 350 kr</h3>
                 <p> Du hjälper oss att göra skivan till verklighet! </p>
