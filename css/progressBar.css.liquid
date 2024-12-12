@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 ---
 
 #progress-container {
-  margin: 1vh 0 6vh 0;
+  margin: 1vh 0 5.2vh 0;
   width: 100%;
   background: var(--blue);
 }
@@ -15,7 +15,7 @@ eleventyExcludeFromCollections: true
   background-color: #456d84;
   box-shadow: 10px 10px 16px #00000066;
   
-  height: 5vh;
+  height: 4vh;
 
   margin: 0;
   z-index: -1;
@@ -39,10 +39,11 @@ eleventyExcludeFromCollections: true
 }
 
 #progress-bar-markings span {
+  font-family: Canterbury;
   display: block;
   font-size: 1.7vh;
   font-weight: bold;
-  margin: 0 0 0 calc((45vh - 11vh) / 5 - 1vh);
+  margin: 0 0 0 calc((45vh - 11vh) / 5 - 2vh);
   white-space: nowrap;
   padding: 0;
   color: var(--off-yellow);
@@ -50,9 +51,9 @@ eleventyExcludeFromCollections: true
 
 #progress-bar-markings .vl {
   display: block;
-  height: 5.1vh;
+  height: 4.1vh;
   border-right: 2px solid #0009;
-  margin: 1.8vh 0 0 0;
+  margin: 2.2vh 0 0 0;
   padding: 0;
 }
 
@@ -73,9 +74,8 @@ eleventyExcludeFromCollections: true
 
 @media(max-width: 1000px) {
   #progress-container {
-    margin: 10px auto 50px auto;
+    margin: 10px auto 60px auto;
     width: 500px;
-    background: var(--blue);
   }
 
   #progress-bar {
@@ -88,8 +88,8 @@ eleventyExcludeFromCollections: true
   }
 
   #progress-bar-markings span {
-    font-size: 15px;
-    margin: 0 0 0 calc(500px / 5 - 30px);
+    font-size: 20px;
+    margin: 0 0 0 calc(500px / 5 - 35px);
   }
 
   #progress-bar-markings .vl {
@@ -102,15 +102,13 @@ eleventyExcludeFromCollections: true
   }
 }
 
-@media(max-width: 550px) {
+@media(max-width: 560px) {
   #progress-container {
-    margin: 10px auto 50px auto;
     width: 100%;
-    background: var(--blue);
   }
 
   #progress-bar {
-    height: 40px;
+    height: 8vw;
   }
 
   #progress-bar-markings {
@@ -119,12 +117,12 @@ eleventyExcludeFromCollections: true
   }
 
   #progress-bar-markings span {
-    font-size: 3vw;
+    font-size: 3.6vw;
     margin: 0 0 0 calc((100vw - 80px) / 5 - 5vw);
   }
 
   #progress-bar-markings .vl {
-    height: 40px;
+    height: 8vw;
     margin: 3.5vw 0 0 0;
   }
 
