@@ -1,0 +1,40 @@
+
+.no-overflow {
+  overflow-y: hidden;
+}
+
+@media(max-width: 900px) {
+  .no-overflow {
+    overflow-y: visible;
+  }
+}
+
+#formulär {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  top: 0;
+  transition: top 1s;
+  height: calc(100vh - 60px - 80px);
+  min-height: calc(100vh - 60px - 80px);
+  width: calc(100vw - 500px - 80px);
+  overflow-y: hidden;
+}
+
+@media(max-width: 1000px) {
+  #formulär {
+    width: calc(100% - 80px);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+#swish-QR {
+  margin: auto;
+  padding: 20px;
+  height: 550px;
+  z-index: -1;
+}

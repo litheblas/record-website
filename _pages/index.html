@@ -4,6 +4,7 @@ description: LiTHe Blås Skivgrupp
 layout: layouts/layout.liquid
 permalink: index.html
 css: "index.css" 
+date: 2024-11-12
 ---
 
 <div class="horizontal-flex"> 
@@ -28,54 +29,5 @@ css: "index.css"
             </p>
         </div>
     </section>
-    <section class="aside"> 
-
-        {% include "partials/progressBar.liquid" %}
-
-        <ul>
-            <li>
-                <h1>Donationsmål</h1>
-            </li>
-            <li>
-                <h3>
-                    10 000 kr
-                </h3>
-                <p>
-                    En gamling får vara med i musikvideon
-                </p>
-            </li>
-            <li>
-                <h3>
-                    20 000 kr
-                </h3>
-                <p>
-                    Aktiva blåset åker gratis på vår rephelg
-                </p>
-            </li>
-            <li>
-                <h3>
-                    30 000 kr
-                </h3>
-                <p>
-                    Kompet gycklar på skivsläppet
-                </p>
-            </li>
-            <li>
-                <h3>
-                    40 000 kr
-                </h3>
-                <p>
-                    Kompet gycklar INTE på skivsläppet
-                </p>
-            </li>
-            <li>
-                <h3>
-                    50 000 kr
-                </h3>
-                <p>
-                    Naket på skivomslaget
-                </p>
-            </li>
-        </ul>
-    </section>
+    {% include "partials/donationsmål.liquid" %}
 </div>

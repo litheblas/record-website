@@ -6,7 +6,7 @@
     <img src="svg/navbar-toggle.svg">
   </button>
   <ul id="links">
-    {%- for post in collections.all -%}
+    {%- for post in collections.all reversed -%}
       <li
         {% if page.url == post.url %}
         class="selected"

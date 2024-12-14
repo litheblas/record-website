@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Z89Yc-KZ3LdmFBRLxnOoHmfwS7m1y1J46wsT4Jozajk" />
-    <title>Start</title>
+    <title>Donera</title>
     <meta name="description" content="LiTHe Blås Skivgrupp">
     <meta name="keywords" content="LiTHe Blås">
     <link
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/progressBar.css">
     
-      <link rel="stylesheet" href="/css/index.css">
+      <link rel="stylesheet" href="/css/donera.css">
     
     
   </head>
@@ -38,14 +38,14 @@
           Förköp
         </a>
       </li><li
+        
+        class="selected"
+        aria-current="page"
         >
         <a href="/donera.html">
           Donera
         </a>
       </li><li
-        
-        class="selected"
-        aria-current="page"
         >
         <a href="/">
           Start
@@ -65,27 +65,9 @@
     </header>
     <main>
       
-<div class="horizontal-flex"> 
-    <section class="vertical-flex"> 
-        <div id="banner" class="banner">
-            <img src="img/banner.webp"/>
-        </div>
-        <div id="info" class="text-box">
-            <h3>Hjälp LiTHe Blås producera sin nästa skiva!</h3>
-            <p>
-                Äntligen! Efter 12 långa år ska dom göra det igen! 
-                LiTHe Blås släpper äntligen sin efterlängtade nya skiva!!!
-            </p>
-            <p>
-                Vi i skivgruppen har äran att få berätta att vi under våren 2025 ska spela in en ny skiva, men för att göra detta projekt från en dröm till en verklighet behöver vi din hjälp. 
-            </p>
-            <p>
-                Därför erbjuder vi möjligheten att förbeställa skivan samt donera en valfri summa för att se till att detta projekt blir så bra som möjligt! 
-            </p>
-            <p>
-                Har ni några frågor eller idéer kan ni kontakta oss på vår mail: skivgruppen@litheblas.org    
-            </p>
-        </div>
+<div id="container" class="horizontal-flex"> 
+    <section id="formulär">
+        <img id="swish-QR" src="img/swish-QR.png">
     </section>
     <section class="aside">
 
@@ -144,52 +126,94 @@
 </script>
 
   <ul>
+    <h1>Förmåner</h1>
     <li>
-      <h1>Donationsmål</h1>
-    </li>
-    <li>
-      <h3>
-        5 000 kr
-      </h3>
-      <p>
-        Kompet gycklar på skivsläppet
+      <h3>1 - 350 kr</h3>
+      <p class="small">
+        Du hjälper oss att göra skivan till verklighet!
       </p>
     </li>
     <li>
-      <h3>
-        10 000 kr
-      </h3>
-      <p>
-        Kompet gycklar INTE på skivsläppet
+      <h3>350 - 500 kr</h3>
+      <p class="small">
+        Du får ett exemplar av vår nya LP-skiva!
       </p>
     </li>
     <li>
-      <h3>
-        20 000 kr
-      </h3>
-      <p>
-        Aktiva blåset åker gratis på vår rephelg
+      <h3>500 - 1000 kr</h3>
+      <p class="small">
+        Du får vår nya LP-skiva signerad av hela blåset!
       </p>
     </li>
     <li>
-      <h3>
-        30 000 kr
-      </h3>
-      <p>
-        En gamling får vara med i musikvideon
+      <h3>1000kr - 3000 kr</h3>
+      <p class="small">
+        En hemlig överaskning...
       </p>
     </li>
     <li>
-      <h3>
-        50 000 kr
-      </h3>
-      <p>
-        Naket på skivomslaget
+      <h3>Över 3000 kr</h3>
+      <p class="small">
+        Du står med som sponsor på skivomslaget
       </p>
     </li>
   </ul>
 </section>
 </div>
+
+<script>
+    const form = document.querySelector('#formulär form');
+
+    form.addEventListener("change", function(e) {
+        const inputs = document.getElementsByTagName("input");
+        const submit = document.getElementById("submit-form");
+        
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].checkValidity() == false) {
+                submit.disabled = "disabled";
+            } else {
+                submit.disabled = false;
+            }
+        }
+    });
+    
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxtLrgIy9K9MzmibNuueC_7no4pUSV8Zs1SwuRGAbl7IOydOVv5JxecbBKUKg04vJNhHQ/exec"
+
+    form.addEventListener('submit', function(e) 
+    {            
+        event.preventDefault(); 
+
+        let formData = {
+            förnamn: document.getElementById('förnamn').value,
+            efternamn: document.getElementById('efternamn').value,
+            epost: document.getElementById('epost').value,
+            adress: document.getElementById('adress').value,
+            postnummer: document.getElementById('postnummer').value,
+            telefon: document.getElementById('telefon').value,
+            skiva: document.querySelector('input[name="skiva"]:checked').value,
+            date: new Date().toISOString().slice(0, 10)
+        };
+
+        fetch(scriptURL, {
+            redirect: "follow",
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8",
+            }
+        })
+        
+        const swish = document.querySelector('#formulär img');
+        const formulär = document.querySelector('#formulär');
+        const container = document.querySelector('#container');
+
+        form.style.opacity = 0;
+        swish.style.opacity = 1;
+        formulär.style.top = "-650px";    
+        formulär.style.overflowY = "visible";
+        container.classList.add("no-overflow");
+    });
+</script>
     </main>
     <footer class="box-shadow">
       <div></div>
