@@ -38,11 +38,6 @@
           Förköp
         </a>
       </li><li
-        >
-        <a href="/donera.html">
-          Donera
-        </a>
-      </li><li
         
         class="selected"
         aria-current="page"
@@ -70,22 +65,25 @@
         <div id="banner" class="banner">
             <img src="img/banner.webp"/>
         </div>
-        <div id="info" class="text-box">
-            <h3>Hjälp LiTHe Blås producera sin nästa skiva!</h3>
-            <p>
-                Äntligen! Efter 12 långa år ska dom göra det igen! 
-                LiTHe Blås släpper äntligen sin efterlängtade nya skiva!!!
-            </p>
-            <p>
-                Vi i skivgruppen har äran att få berätta att vi under våren 2025 ska spela in en ny skiva, men för att göra detta projekt från en dröm till en verklighet behöver vi din hjälp. 
-            </p>
-            <p>
-                Därför erbjuder vi möjligheten att förbeställa skivan samt donera en valfri summa för att se till att detta projekt blir så bra som möjligt! 
-            </p>
-            <p>
-                Har ni några frågor eller idéer kan ni kontakta oss på vår mail: skivgruppen@litheblas.org    
-            </p>
-        </div>
+            <div class="content-box">
+                <div id="info" class="text-box">
+                    <h3>Hjälp LiTHe Blås producera sin nästa skiva!</h3>
+                    <p>
+                        Äntligen, Efter 12 långa år ska dom göra det igen!<br> 
+                        LiTHe Blås ska släppa en skiva!!!
+                    </p>
+                    <p>
+                        Skivgruppen har äran att berätta att vi under våren 2025 planerar att spela in en skiva, men för att göra detta projekt från vår dröm till blåsets verklighet behöver vi din hjälp. 
+                    </p>
+                    <p>
+                        Nu erbjuder vi möjligheten att <a href="/förköp">förbeställa</a> skivan för 350kr samt donera en valfri summa  och få speciella förmåner! 
+                    </p>
+                    <p>
+                        Har ni några frågor eller idéer kan ni kontakta oss på vår mail: skivgruppen@litheblas.org    
+                    </p>
+                </div>                    
+                <img id="swish-QR" src="img/swish-QR.png">
+            </div>
     </section>
     <section class="aside">
 
@@ -137,7 +135,7 @@
             const progressFill = document.getElementById("progress-fill");
             progressFill.classList = "";
             const progressBarWrapper = document.getElementById("progress-bar-wrapper");
-            const precent = 100 * (parseFloat(json.data) / 50000)
+            const precent = 100 * ((parseFloat(json.data) + 10000) / 50000)
             progressBarWrapper.style.width = precent + "%";
         } );
     }

@@ -37,7 +37,10 @@
 .text-box {
   margin: 0 auto;
   padding: 30px 40px;
-  max-width: 800px;
+  max-width: 500px;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media(max-width: 1000px) {
@@ -52,4 +55,24 @@
     max-width: auto;
     padding: 5.45vw;
   }
+}
+
+.content-box {
+  display: flex;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
+@media(max-width: 1700px) {
+  .content-box {
+    flex-direction: column;
+  }
+}
+
+#swish-QR {
+  display: block;
+  margin: auto;
+  width: 300px;
+  height: 455px;
+  padding: 40px;
 }
