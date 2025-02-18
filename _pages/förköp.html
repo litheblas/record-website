@@ -46,8 +46,8 @@ date: 2024-12-13
             <br>
             <input id="submit-form" type="submit" disabled="disabled" value="Skicka">
         </form>
-        <img id="swish-QR" src="img/swish-QR.png">
     </section>
+    <img id="swish-QR" src="img/swish-QR.png">
     {% include "partials/förmåner.liquid" %}
 </div>
 
@@ -93,14 +93,12 @@ date: 2024-12-13
             }
         })
         
-        const swish = document.querySelector('#formulär img');
+        const swish = document.querySelector('#swish-QR');
         const formulär = document.querySelector('#formulär');
-        const container = document.querySelector('#container');
 
         form.style.opacity = 0;
         swish.style.opacity = 1;
-        formulär.style.top = "-650px";    
-        formulär.style.overflowY = "visible";
-        container.classList.add("no-overflow");
+        formulär.style.display = "none";    
+        swish.style.display = "block";
     });
 </script>

@@ -3,16 +3,6 @@ permalink: css/förköp.css
 eleventyExcludeFromCollections: true
 ---
 
-.no-overflow {
-  overflow-y: hidden;
-}
-
-@media(max-width: 900px) {
-  .no-overflow {
-    overflow-y: visible;
-  }
-}
-
 #formulär {
   max-width: 500px;
   margin: 0 auto;
@@ -20,28 +10,29 @@ eleventyExcludeFromCollections: true
   flex-direction: column;
   display: flex;
   position: relative;
-  top: 0;
-  transition: top 1s;
-  height: calc(100vh - 60px - 80px);
   min-height: calc(100vh - 60px - 80px);
   width: calc(100vw - 500px - 80px);
-  overflow-y: hidden;
+  justify-content: center;
 }
 
 @media(max-width: 1000px) {
   #formulär {
-    width: calc(100% - 80px);
-    max-width: 500px;
+    width: calc(100% - 40px);
+    padding: 20px 20px 40px 20px;
+    min-height: calc(100vh - 60px);
     margin: 0 auto;
   }
 }
 
 #swish-QR {
   margin: auto;
-  padding: 20px;
-  height: 550px;
+  padding: 80px 40px;
+  width: calc(100% - 80px);
+  max-width: 500px;
+  height: fit-content;
   opacity: 0;
   transition: opacity 1s;
+  display: none;
   z-index: -1;
 }
 

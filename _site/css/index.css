@@ -61,11 +61,13 @@
   display: flex;
   margin: 0 auto;
   padding: 30px 40px;
+  gap: 80px;
 }
 
 @media(max-width: 1700px) {
   .content-box {
     flex-direction: column;
+    gap: 0px;
   }
 }
 
