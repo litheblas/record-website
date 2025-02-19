@@ -52,8 +52,8 @@
 
 @media(max-width: 550px) {
   .text-box {
-    max-width: auto;
-    padding: 5.45vw;
+    padding: 0;
+    font-size: 14px;
   }
 }
 
@@ -74,7 +74,15 @@
 #swish-QR {
   display: block;
   margin: auto;
-  width: 300px;
+  max-width: 300px;
   height: 455px;
   padding: 40px;
+}
+
+@media(max-width: 550px) {
+  #swish-QR {
+    padding: 40px 0;
+    width: 100%;
+    height: auto;
+  }
 }
