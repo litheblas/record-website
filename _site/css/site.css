@@ -74,7 +74,8 @@ body {
   width: calc(100vw - 480px);
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
+
 }
 
 @media(max-width: 1000px) {
@@ -147,10 +148,7 @@ body {
   .aside {
     position: relative;
     padding: 40px 30px;
-    background: var(--blue);
-    color: var(--off-yellow);
     width: auto;
-    min-width: calc(100% - 60px);
     height: 850px;
   }
   
@@ -175,6 +173,28 @@ body {
   }
 }
 
+@media(max-width: 550px) {
+  .aside {
+    position: relative;
+    padding: 7.2vw 5.5vw;
+    height: 154vw;
+  }
+  
+  .aside h1 {
+    font-size: 10vw;
+  }
+  
+  .aside h3 {
+    font-size: 4.9vw;
+    padding: 0 0 3.6vw 0;
+  }
+  
+  .aside p {
+    font-size: 2.9vw;
+    margin: 3.6vw 0 0 0;
+  }
+}
+
 h1 {
   font-size: 2.2em;
   margin: 20px 0 20px 0;
@@ -186,7 +206,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin: 10px 0 30px 0;
 }
 

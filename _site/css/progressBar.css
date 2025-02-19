@@ -1,8 +1,9 @@
 
 #progress-container {
-  margin: 1vh 0 5.2vh 0;
+  margin: 1vh auto 5.2vh auto;
   width: 100%;
   background: var(--blue);
+  max-width: 600px;
 }
 
 #progress-bar {
