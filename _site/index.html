@@ -132,7 +132,7 @@
             const progressFill = document.getElementById("progress-fill");
             progressFill.classList = "";
             const progressBarWrapper = document.getElementById("progress-bar-wrapper");
-            const precent = 100 * ((parseFloat(json.data) + 10000) / 50000)
+            const precent = 100 * (parseFloat(json.data) / 50000)
             progressBarWrapper.style.width = precent + "%";
         } );
     }
